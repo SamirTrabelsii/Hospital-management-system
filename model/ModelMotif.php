@@ -11,8 +11,7 @@ class ModelMotif {
     
     public static function getAllMotifs() {
         $db = App::getDB();
-        $sql = "SELECT *
-        FROM motif
+        $sql = "SELECT * FROM motif
         JOIN piecemotif ON piecemotif.idMo = motif.idMo
         JOIN piece ON piecemotif.idPi = piece.idPi
         JOIN consignemotif ON consignemotif.idMo = motif.idMo 
@@ -23,8 +22,7 @@ class ModelMotif {
 
     public static function getMotifById($idMo) {
         $db = App::getDB();
-        $sql = "SELECT *
-        FROM motif
+        $sql = "SELECT * FROM motif
         JOIN piecemotif ON piecemotif.idMo = motif.idMo
         JOIN piece ON piecemotif.idPi = piece.idPi
         JOIN consignemotif ON consignemotif.idMo = motif.idMo 

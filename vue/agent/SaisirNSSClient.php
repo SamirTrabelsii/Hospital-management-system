@@ -71,20 +71,12 @@
                                 <div id="nss_div"></div>
                         </form> 
                     </div>
-
-					
-
 				</div>
-
 			</div>
 		</div>
 		</div>
 		<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
-		
-			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
-</div>
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="vendor/modernizr/modernizr.js"></script>

@@ -58,14 +58,8 @@
 			<!-- start: FOOTER -->
 	<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
-		
-			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
-			
-			<!-- end: SETTINGS -->
 		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>
-
 		<!-- start: CLIP-TWO JAVASCRIPTS -->
 		<script src="assets/js/main.js"></script>
 		<!-- start: JavaScript Event Handlers for this page -->

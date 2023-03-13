@@ -152,11 +152,6 @@ if (isset($_SESSION['err'])) {
 			<!-- start: FOOTER -->
 			<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
-			
-			<!-- start: SETTINGS -->
-			<?php include('include/setting.php');?>
-	
-		</div>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>
 

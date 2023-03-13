@@ -13,7 +13,6 @@
         else if (isset($_POST["action"]) && isset($_POST["controller"])){
             $action = $_POST['action'];
             $controller = 'Controller'.$_POST['controller'];
-            
         }
         else{
             $controller="ControllerAccueil";

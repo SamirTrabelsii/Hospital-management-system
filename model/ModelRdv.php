@@ -63,11 +63,11 @@ class ModelRdv {
         $result = $db->execute_query($sql, $params);
         return $result->fetchAll(PDO::FETCH_OBJ);
     }
-    // public static function getRdvByDoctor($idPers){
-    //     $sql = "SELECT * FROM rdv join personnel on rdv.idPers=personnel.idPers JOIN specialite on personnel.idSp=specialite.idSp join motif on rdv.idMo=motif.idMo  WHERE rdv.idPers = ?";
-    //     $db = App::getDB();
-    //     $params = [$idPers];
-    //     $result = $db->execute_query($sql, $params);
-    //     return $result->fetchAll(PDO::FETCH_OBJ);
-    // }
+    public static function getRdvByDoctor($idPers){
+        $sql = "SELECT * FROM rdv join personnel on rdv.idPers=personnel.idPers JOIN specialite on personnel.idSp=specialite.idSp join motif on rdv.idMo=motif.idMo  WHERE rdv.idPers = ?";
+        $db = App::getDB();
+        $params = [$idPers];
+        $result = $db->execute_query($sql, $params);
+        return $result->fetchAll(PDO::FETCH_OBJ);
+    }   
 }

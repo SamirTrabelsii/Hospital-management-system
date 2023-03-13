@@ -61,7 +61,7 @@
 												</div></br>
 												<div class="form-group">
 														<h4 for="address">
-															<b>Le numéro du siège sociale du patient : </b><?php echo $client->nss ;?>
+															<b>Le numéro de sécurité sociale du patient : </b><?php echo $client->nss ;?>
 														</h4>
 													</div></br>
 													<div class="form-group">
@@ -71,7 +71,7 @@
 													</div></br>
 													<div class="form-group">
 														<h4 for="num_tel">
-															<b>Numéro du téléphone : </b><?php echo $client->numTel ;?>
+															<b>Numéro de téléphone : </b><?php echo $client->numTel ;?>
 														</h4>
 													</div></br>
 													<div class="form-group">
@@ -158,12 +158,6 @@
 						<!-- start: FOOTER -->
 						<?php include('include/footer.php');?>
 						<!-- end: FOOTER -->
-						
-						<!-- start: SETTINGS -->
-						<?php include('include/setting.php');?>
-					</div>
-			<!-- end: SETTINGS -->
-		</div>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>
 

@@ -1,3 +1,14 @@
+<?php
+include 'model/calendar.php';
+$calendar = new Calendar('2023-03-11');
+foreach ($rdvsdoc as $rdv) {
+  $calendar->add_event($rdv->libelleMo, $rdv->dateRDV , 1, 'green');
+}
+foreach ($taches as $ta) {
+  $calendar->add_event($ta->libelleTa.' à '.date('H', strtotime($ta->dateTa)), $ta->dateTa , 1, 'green');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,6 +28,9 @@
 		<link rel="stylesheet" href="assets/css/styles.css">
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
+    <link rel="stylesheet" href="assets/css/calendar.css">
+
+
 	</head>
 	<body>
 		<div id="app">		
@@ -29,17 +43,13 @@
             <!-- code here  -->
               <form action="index.php?controller=Creneaux&action=bloquerCreneauxProcess" method="post">
                 <div class="margin-left-30">
-                  <label for="nb_creneaux ">
-                    <h4>Nombre de créneaux à bloquer: </h4>
-                  </label>
-                  <input type="number" id="nb_creneaux" name="nb_creneaux" min="1" required>
-                  <button type="submit">Enregistrer</button>
                 </div>
                 <div class="margin-left-30"><div id="creneaux_container"></div></div>
               </form>
+              <?=$calendar?>
             <!-- fin code -->      
             </div>
-          </div> 
+          </div>              
         </div>
 			</div>
 			<!-- start: FOOTER -->
@@ -106,7 +116,6 @@
       });
       container.appendChild(timeLabel);
       container.appendChild(timeInput);
-
       // Create the raison d'absence input
       const raisonLabel = document.createElement('label');
       raisonLabel.innerText = 'Raison d\'absence:';
@@ -116,7 +125,6 @@
       raisonInput.required = true;
       container.appendChild(raisonLabel);
       container.appendChild(raisonInput);
-
       // Add the container to the creneauxContainer
       creneauxContainer.appendChild(container);
     }

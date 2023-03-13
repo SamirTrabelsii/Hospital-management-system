@@ -19,9 +19,6 @@ class modelPersonel {
     }
     
 
-
-
-
 // * DEBUT LES FONCTIONS DES MEDECINS *
 
     public static function addDoctor($nom, $prenom, $login, $mdp,$idSp) {

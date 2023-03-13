@@ -76,11 +76,8 @@ session_start();
 
 											<tr>
 												<td class="center"><?php echo $cnt;?>.</td>
-												<td class="hidden-xs"><?php echo $agent->libelleSp ;?></td>
 												<td><?php echo $agent->nomPers ;?></td>
 												<td><?php echo $agent->prenomPers;?></td>
-												
-												
 												<td >
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
 												<a href="index.php?controller=Agent&action=editagent&id=<?php echo $agent->idPers ;?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
@@ -92,23 +89,6 @@ session_start();
 														<button type="button" class="btn btn-primary btn-o btn-sm dropdown-toggle" dropdown-toggle>
 															<i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
 														</button>
-														<ul class="dropdown-menu pull-right dropdown-light" role="menu">
-															<li>
-																<a href="#">
-																	Edit
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	Share
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	Remove
-																</a>
-															</li>
-														</ul>
 													</div>
 												</div></td>
 											</tr>
@@ -129,15 +109,8 @@ session_start();
 			<!-- start: FOOTER -->
 	<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
-		
-			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
-			
-			<!-- end: SETTINGS -->
-		</div>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>
-
 		<!-- start: CLIP-TWO JAVASCRIPTS -->
 		<script src="assets/js/main.js"></script>
 		<!-- start: JavaScript Event Handlers for this page -->

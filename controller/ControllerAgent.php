@@ -5,6 +5,7 @@ class ControllerAgent {
     public static function addAgent(){
         require ('vue/admin/add-agent.php');
     }
+    
     public static function addAgentProcess(){
         if(isset($_POST['submit'])){
             $nomagent=$_POST['nomagent'];
@@ -14,10 +15,9 @@ class ControllerAgent {
             $result=modelPersonel::addAgent($nomagent,$prenomagent,$loginagent,$mdpagent);
             if($result){
                 echo "<script>alert('Nouveau agent ajouté avec succés');</script>";
-                
-                }
-                ControllerAgent::ManageAgent();    
             }
+            ControllerAgent::ManageAgent();    
+        }
     }
 
     public static function editAgent(){
@@ -35,9 +35,8 @@ class ControllerAgent {
             $result=modelPersonel::editAgent($aid,$nomagent,$prenomagent,$loginagent,$mdpagent);
             if($result){
                 echo "<script>alert('Agent modifié avec succés');</script>";
-                
-                }
-                ControllerAgent::ManageAgent();  
+            }
+            ControllerAgent::ManageAgent();  
         }
     }
     public static function deleteAgent(){

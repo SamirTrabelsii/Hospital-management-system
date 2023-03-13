@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<title>Médecin  | Dashboard</title>
 		<meta charset="utf-8" />
@@ -22,8 +22,6 @@ if (session_status() == PHP_SESSION_NONE) {
 		<link rel="stylesheet" href="assets/css/styles.css">
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
-		<link href="assets/css/calendar.css" type="text/css" rel="stylesheet" />
-
 
 
 	</head>
@@ -39,7 +37,7 @@ if (session_status() == PHP_SESSION_NONE) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">BONJOUR Dr. </h1>
+									<h1 class="mainTitle">BONJOUR Dr. <?php echo $_SESSION['idPers'];?> </h1>
 								</div>
 								<ol class="breadcrumb">
 									<li>
@@ -53,21 +51,18 @@ if (session_status() == PHP_SESSION_NONE) {
 						</section>
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
-							<div class="container-fluid container-fullw bg-white">
+						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
 											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
 											<h2 class="StepTitle">Bloquer Crénaux </h2>
-
 										</div>
 									</div>
-										
 								</div>
-								<!-- ici -->
+							</div>
 						</div>
-					</div>
 					</div>
 					</div>
 					</div>
@@ -76,9 +71,6 @@ if (session_status() == PHP_SESSION_NONE) {
 			<!-- start: FOOTER -->
 	<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
-			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
-			<!-- end: SETTINGS -->
 		<!-- start: MAIN JAVASCRIPTS -->
 	<?php include('include/import.php');?>
 

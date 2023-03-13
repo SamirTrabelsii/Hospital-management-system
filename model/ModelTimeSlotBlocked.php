@@ -19,7 +19,6 @@ class ModelTimeSlotBlocked {
         $db = App::getDB();
         $params = array($idPers);
         $result = $db->execute_query($sql, $params);
-        
         return $result->fetchAll(PDO::FETCH_OBJ);
     }
 

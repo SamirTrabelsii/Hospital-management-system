@@ -48,7 +48,6 @@ class ControllerAdmin {
                 ControllerAdmin::ManageMotif();  
         }
     }
-
     public static function deleteMotif(){
         if(isset($_GET['del']))
         {
@@ -56,7 +55,6 @@ class ControllerAdmin {
     }
     ControllerAdmin::ManageMotif();    
     }
-
     // ** LES FONCTIONS DE GESTION DU DIRECTEUR **
 
 

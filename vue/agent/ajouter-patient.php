@@ -15,9 +15,6 @@
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 		
-		
-		
-
 	</head>
 	<body>
 	<div id="app">		
@@ -127,13 +124,10 @@
 
 		<?php include('include/footer.php');?>
 
-		<?php include('include/setting.php');?>
-
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="vendor/modernizr/modernizr.js"></script>
 		<script src="vendor/jquery-cookie/jquery.cookie.js"></script>
-		<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 		<script src="vendor/switchery/switchery.min.js"></script>
 		<script src="vendor/jquery-validation/jquery.validate.min.js"></script>
 		<script src="assets/js/main.js"></script>

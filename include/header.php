@@ -25,40 +25,13 @@
 								<h2>Cabinet Médical YOANA .</h2>
 							</li>
 							<li class="">
-								<img src="assets/images/logo.png" alt="Peter" style="  width: 69px;
-  height: 39px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-top: 4px;">
-
-					
+								<img src="assets/images/logo.png" alt="Peter" style="  width: 69px; height: 39px; border-radius: 50%; overflow: hidden; margin-top: 4px;">
 							</li>
-						
 							<li class="dropdown current-user">
 								<a href="index.php?controller=Personel&action=logout">
 									Log Out
 								</a>
 							</li>
-
-							<!-- <li class="dropdown current-user">
-								<a href class="dropdown-toggle" data-toggle="dropdown">
-									<img src="assets/images/avatar-1.jpg" alt="Peter"> <span class="username">
-										<?php echo $_SESSION['idPers']?>
-									<i class="ti-angle-down"></i></i></span>
-								</a>
-								<ul class="dropdown-menu dropdown-dark">
-									<li>
-										<a href="index.php?controller=Personel&action=logout">
-											Log Out
-										</a>
-									</li>
-								</ul>
-							</li> -->
-							<!-- end: USER OPTIONS DROPDOWN -->
 						</ul>
-						<!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
 					</div>
-				
-					
-					<!-- end: NAVBAR COLLAPSE -->
 				</header>

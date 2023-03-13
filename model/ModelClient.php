@@ -70,6 +70,8 @@ class ModelClient {
         return $db->execute_query($sql, $params);
     }
 
+    // cette fonction determine le nss du client en entrant son nom et son date de naissance ( page consulter patient )
+    
     public static function NSSequivalent($nom, $date_naissance) {
         $db = App::getDB();
         $sql = "SELECT nss FROM client WHERE nomCl = ? AND dateNais = ?";

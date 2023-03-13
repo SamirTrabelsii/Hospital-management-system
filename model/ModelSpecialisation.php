@@ -20,7 +20,6 @@ class ModelSpecialisation {
         else{           
             return $result->fetchAll(PDO::FETCH_OBJ);
         }
-
     }
 
     public static function add($libelleSp) {

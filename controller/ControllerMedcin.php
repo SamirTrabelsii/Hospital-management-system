@@ -25,9 +25,9 @@ class ControllerMedcin {
             $result=ModelSpecialisation::add($docspecialization);
             if($result){
                 echo "<script>alert('Spécialité ajoutée avec succés');</script>";
-                }
             }
-            ControllerMedcin::specialiste();
+        }
+        ControllerMedcin::specialiste();
 
     }
     public static function deleteSpecialisation(){
@@ -57,10 +57,9 @@ class ControllerMedcin {
             $result=modelPersonel::addDoctor($nommedecin,$prenommedecin,$loginmedecin,$mdpmedecin,$docspecialization);
             if($result){
                 echo "<script>alert('Médecin ajouté avec succés');</script>";
-                
-                }
-                ControllerMedcin::ManageDoctor();    
             }
+            ControllerMedcin::ManageDoctor();    
+        }
     }
     public static function deleteDoctor(){
         if(isset($_GET['del']))
@@ -80,9 +79,8 @@ class ControllerMedcin {
             $result=modelPersonel::editDoctor($_GET['id'],$nommedecin,$prenommedecin,$loginmedecin,$mdpmedecin,$docspecialization);
             if($result){
                 echo "<script>alert('Médecin modifié avec succés');</script>";
-                
-                }
-                ControllerMedcin::ManageDoctor();  
+            }
+            ControllerMedcin::ManageDoctor();  
         }
 
     } 

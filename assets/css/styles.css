@@ -1724,86 +1724,6 @@ ul.sub-menu li ul.sub-menu li ul.sub-menu li a {
   height: 10px;
 }
 
-.theme-1 .th-header {
-  background: #ffffff;
-}
-.theme-1 .th-collapse {
-  background: #ffffff;
-}
-.theme-1 .th-sidebar {
-  background: #ffffff;
-}
-.theme-1 .th-body {
-  background: #EFEFF4;
-}
-.theme-1 .element {
-  background: #007aff;
-}
-
-.theme-2 .th-header {
-  background: #22262E;
-}
-.theme-2 .th-collapse {
-  background: #ffffff;
-}
-.theme-2 .th-sidebar {
-  background: #1B1E24;
-}
-.theme-2 .th-body {
-  background: #E5E9EC;
-}
-.theme-2 .element {
-  background: #D1351F;
-}
-
-.theme-3 .th-header {
-  background: #485058;
-}
-.theme-3 .th-collapse {
-  background: #485058;
-}
-.theme-3 .th-sidebar {
-  background: #788290;
-}
-.theme-3 .th-body {
-  background: #F0F3F4;
-}
-.theme-3 .element {
-  background: #1FBBA6;
-}
-
-.theme-4 .th-header {
-  background: #E7E7E7;
-}
-.theme-4 .th-collapse {
-  background: #F1F1F1;
-}
-.theme-4 .th-sidebar {
-  background: #F3F3F3;
-}
-.theme-4 .th-body {
-  background: #F8F8F8;
-}
-.theme-4 .element {
-  background: #00BDCC;
-}
-
-.theme-5 .th-header {
-  background: #2C3543;
-}
-.theme-5 .th-collapse {
-  background: #2C3543;
-}
-.theme-5 .th-sidebar {
-  background: #364150;
-}
-.theme-5 .th-body {
-  background: #F8F8F8;
-}
-.theme-5 .element {
-  background: #81B441;
-}
-
 .theme-6 .th-header {
   background: #1C2B36;
 }
@@ -4410,7 +4330,7 @@ a.text-light:hover {
   animation: heart-pulse 1s linear infinite;
 }
 
-@keyframes "heart-pulse" {
+/* @keyframes "heart-pulse" {
   0% {
     color: #a51919;
   }
@@ -4453,7 +4373,7 @@ a.text-light:hover {
   100% {
     color: red;
   }
-}
+} */
 /* ---------------------------------------------------------------------- */
 /* Progress Bar
 /* ---------------------------------------------------------------------- */

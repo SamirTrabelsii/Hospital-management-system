@@ -39,8 +39,6 @@ public function execute_query($sql, $params = null){
         echo "Lecture impossible, code", $this->pdo->errorCode(),$erreur[2];
         die();
     }else {
-        
-        //return $resultat->fetchAll(PDO::FETCH_OBJ);
         return $resultat;
     }
     

@@ -78,48 +78,149 @@ class ControllerClient{
     $motifs=ModelMotif::getAllMotifs();
     require ('vue/agent/PrendreRdv.php');
    }
-   public static function verifyRdv(){
-       // Get the date and time values from the form
-       $nss=$_GET["NSS"];
-       $date = $_POST['appointmentdate'];
-       $time = $_POST['appttime'];
-       $idPers=$_POST['doctor'];
-       $idSp=$_POST['Doctorspecialization'];
-       $idMo=$_POST['Motif'];
+   // DEBUT ESSAI CHATGPT
 
+    public static function verifyRdv(){
+        // Get the date and time values from the form
+        $nss=$_GET["NSS"];
+        $date = $_POST['appointmentdate'];
+        $time = $_POST['appttime'];
+        $idPers=$_POST['doctor'];
+        $idSp=$_POST['Doctorspecialization'];
+        $idMo=$_POST['Motif'];
 
-       // Combine the date and time values into a single datetime value
-       $datetime = $date . ' ' . $time . ':00';
-       $tacheAdmin=ModelTimeSlotBlocked::getAllTimeSlotBlockedByIdPers($idPers);
-       
-       if ($tacheAdmin) {
+        // Combine the date and time values into a single datetime value
+        $datetime = $date . ' ' . $time . ':00';
+        $tacheAdmin=ModelTimeSlotBlocked::getAllTimeSlotBlockedByIdPers($idPers);
+        $rdvdoc=ModelRdv::getRdvByDoctor($idPers);
+
         $verif_ta = true;
-        reset($tacheAdmin); // set the pointer to the first element
-        while ($row = current($tacheAdmin)) {
-            if ($row->dateTa == $datetime) {
-                $_SESSION["err"] = 'médecin non disponible en raison de ' . $row->libelleTa . " | Merci de prendre un RDV dans un autre temps ";
-                $motifs = ModelMotif::getAllMotifs();
-                require('vue/agent/PrendreRdv.php');
-                $verif_ta = false;
-                break; // exit the loop if the condition is not met
+        if ($tacheAdmin) {
+            // Check if there are any time slots blocked for the given datetime
+            reset($tacheAdmin); // set the pointer to the first element
+            while ($row = current($tacheAdmin)) {
+                if ($row->dateTa == $datetime) {
+                    $_SESSION["err"] = 'médecin non disponible en raison de ' . $row->libelleTa . " | Merci de prendre un RDV dans un autre temps ";
+                    $motifs = ModelMotif::getAllMotifs();
+                    require('vue/agent/PrendreRdv.php');
+                    $verif_ta = false;
+                    break; // exit the loop if the condition is not met
+                }
+                next($tacheAdmin); // move the pointer to the next element
             }
-            next($tacheAdmin); // move the pointer to the next element
         }
         if ($verif_ta) {
-            $nss = $_GET["NSS"];
-            $client = ModelClient::getClient($nss);
-            $rdv = ModelRdv::addRdv($datetime, "En attente", $nss, $idPers, $idMo);
-            $rdvs = ModelRdv::getRdvByClient($nss);
-            require('vue/agent/ConsultationPatient.php');
+            // Check if there are any appointments for the given datetime
+            $verif_rdv = true;
+            if ($rdvdoc) {
+                reset($rdvdoc); // set the pointer to the first element
+                while ($row = current($rdvdoc)) {
+                    if ($row->dateRDV == $datetime) {
+                        $_SESSION["err"] = 'médecin non disponible en raison d"un autre RDV | Merci de prendre un RDV dans un autre temps ';
+                        $motifs = ModelMotif::getAllMotifs();
+                        require('vue/agent/PrendreRdv.php');
+                        $verif_rdv = false;
+                        break; // exit the loop if the condition is not met
+                    }
+                    next($rdvdoc); // move the pointer to the next element
+                }
+            }
+            if ($verif_rdv) {
+                // Add the appointment to the database
+                $nss = $_GET["NSS"];
+                $client = ModelClient::getClient($nss);
+                $rdv = ModelRdv::addRdv($datetime, "En attente", $nss, $idPers, $idMo);
+                $rdvs = ModelRdv::getRdvByClient($nss);
+                require('vue/agent/ConsultationPatient.php');
+            }
         }
-    } else {
-        $nss = $_GET["NSS"];
-        $client = ModelClient::getClient($nss);
-        $rdv = ModelRdv::addRdv($datetime, "En attente", $nss, $idPers, $idMo);
-        $rdvs = ModelRdv::getRdvByClient($nss);
-        require('vue/agent/ConsultationPatient.php');
     }
-    }
+// FIN ESSAI CHATGPT
+//    public static function verifyRdvDoc(){
+//     // Get the date and time values from the form
+//     $nss=$_GET["NSS"];
+//     $date = $_POST['appointmentdate'];
+//     $time = $_POST['appttime'];
+//     $idPers=$_POST['doctor'];
+//     $idSp=$_POST['Doctorspecialization'];
+//     $idMo=$_POST['Motif'];
+
+//     // Combine the date and time values into a single datetime value
+//     $datetime = $date . ' ' . $time . ':00';
+//     $rdvdoc=ModelRdv::getRdvByDoctor($idPers);
+    
+//     if ($rdvdoc) {
+//      $verif_rdv = true;
+//      reset($rdvdoc); // set the pointer to the first element
+//      while ($row = current($rdvdoc)) {
+//          if ($row->dateRDV == $datetime) {
+//              $_SESSION["err"] = "Médecin dans un autre rdv | Merci de prendre un RDV dans un autre temps ";
+//              $motifs = ModelMotif::getAllMotifs();
+//              require('vue/agent/PrendreRdv.php');
+//              $verif_rdv = false;
+//              break; // exit the loop if the condition is not met
+//          }
+//          next($rdvdoc); // move the pointer to the next element
+//      }
+//      if ($verif_rdv) {
+//          $nss = $_GET["NSS"];
+//          $client = ModelClient::getClient($nss);
+//          $rdv = ModelRdv::addRdv($datetime, "En attente", $nss, $idPers, $idMo);
+//          $rdvs = ModelRdv::getRdvByClient($nss);
+//          require('vue/agent/ConsultationPatient.php');
+//      }
+//  } else {
+//      $nss = $_GET["NSS"];
+//      $client = ModelClient::getClient($nss);
+//      $rdv = ModelRdv::addRdv($datetime, "En attente", $nss, $idPers, $idMo);
+//      $rdvs = ModelRdv::getRdvByClient($nss);
+//      require('vue/agent/ConsultationPatient.php');
+//  }
+//  }
+
+//    public static function verifyRdv(){
+//        // Get the date and time values from the form
+//        $nss=$_GET["NSS"];
+//        $date = $_POST['appointmentdate'];
+//        $time = $_POST['appttime'];
+//        $idPers=$_POST['doctor'];
+//        $idSp=$_POST['Doctorspecialization'];
+//        $idMo=$_POST['Motif'];
+
+//        // Combine the date and time values into a single datetime value
+//        $datetime = $date . ' ' . $time . ':00';
+//        $tacheAdmin=ModelTimeSlotBlocked::getAllTimeSlotBlockedByIdPers($idPers);
+//        $rdvdoc=ModelRdv::getRdvByDoctor($idPers);
+
+       
+//         if ($tacheAdmin) {
+//             $verif_ta = true;
+//             reset($tacheAdmin); // set the pointer to the first element
+//             while ($row = current($tacheAdmin)) {
+//                 if ($row->dateTa == $datetime) {
+//                     $_SESSION["err"] = 'médecin non disponible en raison de ' . $row->libelleTa . " | Merci de prendre un RDV dans un autre temps ";
+//                     $motifs = ModelMotif::getAllMotifs();
+//                     require('vue/agent/PrendreRdv.php');
+//                     $verif_ta = false;
+//                     break; // exit the loop if the condition is not met
+//                 }
+//                 next($tacheAdmin); // move the pointer to the next element
+//             }
+//             if ($verif_ta) {
+//                 $nss = $_GET["NSS"];
+//                 $client = ModelClient::getClient($nss);
+//                 $rdv = ModelRdv::addRdv($datetime, "En attente", $nss, $idPers, $idMo);
+//                 $rdvs = ModelRdv::getRdvByClient($nss);
+//                 require('vue/agent/ConsultationPatient.php');
+//             }
+//         } else {
+//             $nss = $_GET["NSS"];
+//             $client = ModelClient::getClient($nss);
+//             $rdv = ModelRdv::addRdv($datetime, "En attente", $nss, $idPers, $idMo);
+//             $rdvs = ModelRdv::getRdvByClient($nss);
+//             require('vue/agent/ConsultationPatient.php');
+//         }
+//     }
     public static function editProcess($code=null){
         if(isset($_POST['submit']))
         {

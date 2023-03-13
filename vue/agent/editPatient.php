@@ -32,14 +32,14 @@
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle">Agent | Ajouter Patient</h1>
+								<h1 class="mainTitle">Agent | Modifier Patient</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
 									<span>Agent</span>
 								</li>
 								<li class="active">
-									<span>Ajouter patient</span>
+									<span>Modifier patient</span>
 								</li>
 							</ol>
 						</div>
@@ -53,7 +53,7 @@
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
 											<div class="panel-heading">
-												<h5 class="panel-title">Enregistrer un nouveau patient</h5>
+												<h5 class="panel-title">Modifier le patient</h5>
 											</div>
 											<div class="panel-body">
 												<form action="index.php?controller=Client&action=editProcess" role="form" name="adddoc" method="post" onSubmit="return valid();">
@@ -122,9 +122,7 @@
 		</div>
 
 		<?php include('include/footer.php');?>
-
-		<?php include('include/setting.php');?>
-
+		
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="vendor/modernizr/modernizr.js"></script>

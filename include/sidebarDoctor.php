@@ -1,8 +1,6 @@
 <div class="sidebar app-aside" id="sidebar">
 				<div class="sidebar-container perfect-scrollbar">
-
-<nav>
-						
+					<nav>					
 						<!-- start: MAIN NAVIGATION MENU -->
 						<div class="navbar-title">
 							<span>Main Navigation</span>
@@ -27,11 +25,23 @@
 											<i class="ti-home"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Bloquer creneau </span>
+											<span class="title"> Bloquer créneau </span>
 										</div>
 									</div>
 								</a>
-							</li>								
+							</li>	
+							<li>
+								<a href="index.php?controller=Creneaux&action=afficherCalendar">
+									<div class="item-content">
+										<div class="item-media">
+											<i class="ti-home"></i>
+										</div>
+										<div class="item-inner">
+											<span class="title"> Calendar </span>
+										</div>
+									</div>
+								</a>
+							</li>							
 
 						</ul>
 						<!-- end: CORE FEATURES -->
