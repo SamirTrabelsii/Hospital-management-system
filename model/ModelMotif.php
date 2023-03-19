@@ -10,7 +10,7 @@ class ModelMotif {
     // * LES FONCTIONS DES MOTIFS *
     
     public static function getAllMotifs() {
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $sql = "SELECT * FROM motif
         JOIN piecemotif ON piecemotif.idMo = motif.idMo
         JOIN piece ON piecemotif.idPi = piece.idPi
@@ -21,7 +21,7 @@ class ModelMotif {
     }
 
     public static function getMotifById($idMo) {
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $sql = "SELECT * FROM motif
         JOIN piecemotif ON piecemotif.idMo = motif.idMo
         JOIN piece ON piecemotif.idPi = piece.idPi
@@ -34,7 +34,7 @@ class ModelMotif {
     }
 
     public static function addM($libelleMo, $prixMo, $libellePi, $libelleCo) {
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $sql = "INSERT INTO motif (libelleMo, prixMo) VALUES (?,?);
                 SET @idMo = LAST_INSERT_ID();
                 INSERT INTO piece (libellePi) VALUES (?);
@@ -47,7 +47,7 @@ class ModelMotif {
     }
 
     public static function editM($idMo, $libelleMo, $prixMo, $libellePi, $libelleCo) {
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $sql = "UPDATE motif SET libelleMo=?, prixMo=? WHERE motif.idMo=?;";
         $params = array($libelleMo, $prixMo,$idMo);
         $db->execute_query($sql, $params);
@@ -64,7 +64,7 @@ class ModelMotif {
     }
 
     public static function deleteM($idMo) {
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $sql = "DELETE motif, piecemotif, piece, consignemotif, consigne FROM motif
                 JOIN piecemotif ON piecemotif.idMo = motif.idMo
                 JOIN piece ON piecemotif.idPi = piece.idPi

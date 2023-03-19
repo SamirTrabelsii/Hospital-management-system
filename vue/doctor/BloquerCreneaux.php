@@ -54,10 +54,7 @@
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				FormElements.init();
-			});
-            // Get references to the HTML elements
-            const nbCreneauxInput = document.getElementById('nb_creneaux');
+		const nbCreneauxInput = document.getElementById('nb_creneaux');
   const creneauxContainer = document.getElementById('creneaux_container');
 
   // Add an event listener to the nbCreneauxInput field to generate the appointment time inputs

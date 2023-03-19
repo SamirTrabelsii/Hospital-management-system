@@ -28,7 +28,6 @@ session_start();
 			<div class="app-content">
 			<?php include('include/header.php');?>	
 				<!-- end: TOP NAVBAR -->
-				
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">
 						<!-- start: PAGE TITLE -->
@@ -95,19 +94,17 @@ session_start();
 											
 											<?php 
                                                 $cnt=$cnt+1;
-											 }?>
-											
-											
+											 }?>	
 										</tbody>
 									</table>
 								</div>
 							</div>
-								</div>
-							</div>
 						</div>
 					</div>
+				</div>
+			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+		<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
 		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>

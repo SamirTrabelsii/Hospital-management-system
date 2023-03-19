@@ -24,10 +24,10 @@ session_start();
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+			<?php include('include/sidebar.php');?>
 			<div class="app-content">
 				
-						<?php include('include/header.php');?>
+				<?php include('include/header.php');?>
 					
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
@@ -76,16 +76,12 @@ session_start();
 											{
                        
 										?>
-
 											<tr>
 												<td class="center"><?php echo $cnt;?>.</td>
 												<td class="hidden-xs"><?php echo $motif->libelleMo ;?></td>
 												<td><?php echo $motif->prixMo ;?></td>
 												<td><?php echo $motif->libellePi;?></td>
-                                                <td><?php echo $motif->libelleCo;?></td>
-
-												
-												
+                                                <td><?php echo $motif->libelleCo;?></td>								
 												<td >
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
 												<a href="index.php?controller=Admin&action=editMotif&id=<?php echo $motif->idMo ;?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
@@ -119,9 +115,8 @@ session_start();
 											</tr>
 											
 											<?php 
-$cnt=$cnt+1;
+												$cnt=$cnt+1;
 											 }?>
-											
 											
 										</tbody>
 									</table>
@@ -133,7 +128,7 @@ $cnt=$cnt+1;
 					</div>
 
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+		<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
 		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>

@@ -27,10 +27,7 @@ session_start();
 		<div id="app">		
 		<?php include('include/sidebar.php');?>
 			<div class="app-content">
-				
-						<?php include('include/header.php');?>
-						<!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
-					
+				<?php include('include/header.php');?>					
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">
@@ -125,21 +122,14 @@ session_start();
 											
 											</div>
 										</div>
-									<div class="col-lg-12 col-md-12">
-											<div class="panel panel-white">
-												
-												
-											</div>
-										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>	
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+		<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
-		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>
 
 		<!-- start: CLIP-TWO JAVASCRIPTS -->

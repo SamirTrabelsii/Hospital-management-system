@@ -10,7 +10,7 @@ class ModelSpecialisation {
         $this->libelleSp = $libelleSp;
     }
     public static function getAll() {
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $sql = "SELECT * FROM specialite";
         $result = $db->execute_query($sql);
         if(!$result) {
@@ -23,7 +23,7 @@ class ModelSpecialisation {
     }
 
     public static function add($libelleSp) {
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $sql = "INSERT INTO specialite (libelleSp) VALUES (?)";
         $params = array($libelleSp);
         $result = $db->execute_query($sql, $params);
@@ -31,7 +31,7 @@ class ModelSpecialisation {
     }
 
     public static function delete($idSp) {
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $sql = "DELETE FROM specialite WHERE idSp = ?";
         $params = array($idSp);
         $result = $db->execute_query($sql, $params);
@@ -39,7 +39,7 @@ class ModelSpecialisation {
     }
 
     public static function edit($idSp, $libelleSp) {
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $sql = "UPDATE specialite SET libelleSp = ? WHERE idSp = ?";
         $params = array($libelleSp, $idSp);
         $result = $db->execute_query($sql, $params);

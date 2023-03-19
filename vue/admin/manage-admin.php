@@ -24,10 +24,10 @@ session_start();
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+		<?php include('include/sidebar.php');?>
 			<div class="app-content">
 				
-						<?php include('include/header.php');?>
+				<?php include('include/header.php');?>
 					
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
@@ -51,13 +51,11 @@ session_start();
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
-						
-
-									<div class="row">
+							<div class="row">
 								<div class="col-md-12">
 									<h5 class="over-title margin-bottom-15">Gestion <span class="text-bold">directeurs</span></h5>
 									<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
-								<?php echo htmlentities($_SESSION['msg']="");?></p>	
+										<?php echo htmlentities($_SESSION['msg']="");?></p>	
 									<table class="table table-hover" id="sample-table-1">
 										<thead>
 											<tr>
@@ -75,7 +73,6 @@ session_start();
 										foreach($directeurs as $directeur)
 											{
 										?>
-
 											<tr>
 												<td class="center"><?php echo $cnt;?>.</td>
 												<td><?php echo $directeur->nomPers ;?></td>
@@ -115,21 +112,18 @@ session_start();
 											<?php 
                                                 $cnt=$cnt+1;
 											 }?>
-											
-											
 										</tbody>
 									</table>
 								</div>
 							</div>
-								</div>
-							</div>
 						</div>
-						</div>
+					</div>
+				</div>
+			</div>
 
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+		<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
-		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>
 
 		<!-- start: CLIP-TWO JAVASCRIPTS -->

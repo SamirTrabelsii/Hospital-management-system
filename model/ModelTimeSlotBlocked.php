@@ -16,7 +16,7 @@ class ModelTimeSlotBlocked {
 
     public static function getAllTimeSlotBlockedByIdPers($idPers) {
         $sql = "SELECT * FROM tacheadmin WHERE idPers = ?";
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $params = array($idPers);
         $result = $db->execute_query($sql, $params);
         return $result->fetchAll(PDO::FETCH_OBJ);
@@ -25,7 +25,7 @@ class ModelTimeSlotBlocked {
     public static function addTimeSlotBlocked( $dateTa, $libelleTa, $idPers) {
         $sql = "INSERT INTO tacheadmin (dateTa, libelleTa, idPers) VALUES (?, ?, ?)";
         $params = array( $dateTa, $libelleTa, $idPers);
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $db->execute_query($sql, $params);
     }
 

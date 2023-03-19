@@ -139,7 +139,7 @@ public static function deleteDirecteur($id) {
 }
 
 public static function editDirecteur($id, $nom, $prenom, $login, $mdp) {
-    $db = App::getDB();
+    $db = App::getDB();//Récupérer une instance de la base de données.
     $sql = "UPDATE personnel SET nomPers=?, prenomPers=?, login=?, mdp=? WHERE idPers=?";
     $params = array($nom, $prenom, $login, $mdp, $id);
     $result = $db->execute_query($sql, $params);
@@ -148,7 +148,7 @@ public static function editDirecteur($id, $nom, $prenom, $login, $mdp) {
 // *** FIN DES FONCTIONS DU DIRECTEUR ***
 
     public static function login($login,$mdp){
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $sql = 'SELECT * FROM personnel WHERE login = ? AND mdp=? ';
         $params = array($login, $mdp);
         $result = $db->execute_query($sql, $params);

@@ -85,22 +85,6 @@ session_start();
 												<div class="panel-body">
 							
 												<form action="index.php?controller=Agent&action=editAgentProcess&id=<?php echo $agent->idPers ;?>" role="form" name="editagent" method="post" onSubmit="return valid();">
-														<!-- <div class="form-group">
-															<label for="DoctorSpecialization">
-																Doctor Specialization
-															</label>
-													<select name="Doctorspecialization" class="form-control" required="required">
-														<option value="<?php echo $agent->libelleSp; ?>">
-														<?php echo $agent->libelleSp;?></option>
-														
-																<option value="<?php echo htmlentities($row['specilization']);?>">
-																	<?php echo htmlentities($row['specilization']);?>
-																</option>
-																
-																
-															</select>
-														</div> -->
-
                                                         <div class="form-group">
 															<label for="nomagent">
 																Nom d'agent
@@ -138,11 +122,6 @@ session_start();
 											
 											</div>
 										</div>
-									<div class="col-lg-12 col-md-12">
-											<div class="panel panel-white">
-												
-											</div>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -150,9 +129,8 @@ session_start();
 					</div>
 
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+		<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
-		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>
 
 		<!-- start: CLIP-TWO JAVASCRIPTS -->

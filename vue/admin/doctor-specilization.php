@@ -130,7 +130,6 @@
 											$cnt=$cnt+1;
 											 }?>
 											
-											
 										</tbody>
 									</table>
 								</div>
@@ -141,9 +140,8 @@
 					</div>
 
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+		<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
-		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>
 
 		<!-- start: CLIP-TWO JAVASCRIPTS -->

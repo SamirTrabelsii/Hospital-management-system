@@ -156,7 +156,7 @@
 		</div>		
 	</div>
 						<!-- start: FOOTER -->
-						<?php include('include/footer.php');?>
+		<?php include('include/footer.php');?>
 						<!-- end: FOOTER -->
 		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>

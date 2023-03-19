@@ -1,9 +1,17 @@
 <?php class Routeur{
     public function routerRequete() {
         if (isset($_GET["controller"]) && !empty($_GET["controller"])){
-            $controller = 'Controller'.$_GET['controller'];
+            /** 
+             * Cette variable stocke le nom du contrôleur correspondant à l'action demandée.
+             * Elle est initialisée à partir du paramètre 'controller' de l'URL et est utilisée pour inclure le fichier PHP correspondant à ce contrôleur.
+            */
+             $controller = 'Controller'.$_GET['controller'];
             // On recupère l'action passée dans l'URL
             if (isset($_GET["action"]) && !empty($_GET["action"])){
+                /**
+                 * Cette variable stocke le nom de la méthode du contrôleur à appeler. 
+                 * Elle est initialisée à partir du paramètre 'action' de l'URL ou, si ce paramètre n'est pas trouvé, une action par défaut est définie.
+                 */
                 $action = $_GET['action'];
             }
             else{ 

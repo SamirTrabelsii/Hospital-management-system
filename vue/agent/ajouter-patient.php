@@ -58,20 +58,20 @@
 														<label for="nss">
 															NSS
 														</label>
-														<input type="number" name="nss" class="form-control"  placeholder="Entrez le NSS">
+														<input type="number" name="nss" class="form-control"  placeholder="Entrez le NSS" required="required">
 													</div>
 													<div class="form-group">
 														<label for="first_name">
 															Nom du patient
 														</label>
-														<input type="text" name="first_name" class="form-control"  placeholder="Entrez le nom du patient">
+														<input type="text" name="first_name" class="form-control"  placeholder="Entrez le nom du patient" required="required">
 													</div>
 
 													<div class="form-group">
 														<label for="second_name">
 															Prénom du patient
 														</label>
-														<input type="text" name="second_name" class="form-control"  placeholder="Entrez le prénom du patient ">
+														<input type="text" name="second_name" class="form-control"  placeholder="Entrez le prénom du patient " required="required">
 													</div>
 													<div class="form-group">
 														<label for="address">

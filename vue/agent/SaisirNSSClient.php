@@ -15,9 +15,6 @@
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 		
-		
-		
-
 	</head>
 	<body class="login">
 	<div id="app">		

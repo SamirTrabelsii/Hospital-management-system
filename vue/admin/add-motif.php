@@ -105,13 +105,6 @@
 												</div>
 											</div>
 										</div>
-											
-											</div>
-										</div>
-									<div class="col-lg-12 col-md-12">
-											<div class="panel panel-white">
-												
-												
 											</div>
 										</div>
 									</div>
@@ -121,9 +114,8 @@
 						
 					</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+		<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
-		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>
 
 		<!-- start: CLIP-TWO JAVASCRIPTS -->

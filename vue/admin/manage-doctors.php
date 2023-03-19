@@ -27,7 +27,6 @@ session_start();
 		<?php include('include/sidebar.php');?>
 			<div class="app-content">
 			<?php include('include/header.php');?>
-					
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">
@@ -48,12 +47,9 @@ session_start();
 							</div>
 						</section>
 						<!-- end: PAGE TITLE -->
-
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
-						
-
-									<div class="row">
+							<div class="row">
 								<div class="col-md-12">
 									<h5 class="over-title margin-bottom-15">Gestion des <span class="text-bold">Médecins</span></h5>
 									<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
@@ -81,8 +77,6 @@ session_start();
 												<td class="hidden-xs"><?php echo $doctor->libelleSp ;?></td>
 												<td><?php echo $doctor->nomPers ;?></td>
 												<td><?php echo $doctor->prenomPers;?></td>
-												
-												
 												<td >
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
 												<a href="index.php?controller=Medcin&action=editDoctor&id=<?php echo $doctor->idPers ;?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
@@ -106,12 +100,12 @@ session_start();
 									</table>
 								</div>
 							</div>
-								</div>
-							</div>
 						</div>
 					</div>
+				</div>
+			</div>
 			<!-- start: FOOTER -->
-			<?php include('include/footer.php');?>
+		<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
 		<!-- start: MAIN JAVASCRIPTS -->
 		<?php include('include/import.php');?>

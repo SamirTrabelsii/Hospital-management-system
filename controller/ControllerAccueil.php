@@ -2,8 +2,7 @@
 
 
 class ControllerAccueil {
-    
-
+    //Cette classe définit différentes fonctions pour diriger l'utilisateur vers différentes vues selon son rôle.
     public static function acceuil() {
         require ('vue/login.php'); //redirige vers la vue
     }

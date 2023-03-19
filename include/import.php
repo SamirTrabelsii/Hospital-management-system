@@ -7,7 +7,6 @@
 <!-- end: MAIN JAVASCRIPTS -->
 <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
     <script src="vendor/maskedinput/jquery.maskedinput.min.js"></script>
-    <script src="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
     <script src="vendor/autosize/autosize.min.js"></script>
     <script src="vendor/selectFx/classie.js"></script>
     <script src="vendor/selectFx/selectFx.js"></script>

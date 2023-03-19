@@ -27,21 +27,21 @@ class ModelRdv {
     public static function deleteRdv() {
         $sql = "DELETE FROM rdv WHERE idRDV = ?";
         $params = array($this->idRDV);
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $result = $db->execute_query($sql, $params);
     }
     
     public static function getRdv($idRDV) {
         $sql = "SELECT * FROM rdv join motif on rdv.idMO=motif.idMo WHERE idRDV = ?";
         $params = array($idRDV);
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $result = $db->execute_query($sql, $params);
         return $result->fetch(PDO::FETCH_OBJ);
     }
     
     public static function getAllRdv() {
         $sql = "SELECT * FROM rdv join motif on rdv.idMO=motif.idMo";
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $result = $db->execute_query($sql);
         $rdvList = array();
         while ($row = $result->fetch(PDO::FETCH_OBJ)) {
@@ -53,20 +53,27 @@ class ModelRdv {
     public static function editRdv($idRDV) {
         $sql = "UPDATE rdv SET  etatRDV = ? WHERE idRDV = ?";
         $params = array("payée",$idRDV);
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $result = $db->execute_query($sql, $params);
     }
     public static function getRdvByClient($nss){
         $sql = "SELECT * FROM rdv join personnel on rdv.idPers=personnel.idPers JOIN specialite on personnel.idSp=specialite.idSp join motif on rdv.idMo=motif.idMo  WHERE nss = ?";
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $params = [$nss];
         $result = $db->execute_query($sql, $params);
         return $result->fetchAll(PDO::FETCH_OBJ);
     }
     public static function getRdvByDoctor($idPers){
         $sql = "SELECT * FROM rdv join personnel on rdv.idPers=personnel.idPers JOIN specialite on personnel.idSp=specialite.idSp join motif on rdv.idMo=motif.idMo  WHERE rdv.idPers = ?";
-        $db = App::getDB();
+        $db = App::getDB();//Récupérer une instance de la base de données.
         $params = [$idPers];
+        $result = $db->execute_query($sql, $params);
+        return $result->fetchAll(PDO::FETCH_OBJ);
+    }       
+    public static function getRdvByMotif($idMo){
+        $sql = "SELECT * FROM rdv join personnel on rdv.idPers=personnel.idPers JOIN specialite on personnel.idSp=specialite.idSp join motif on rdv.idMo=motif.idMo  WHERE rdv.idMo = ?";
+        $db = App::getDB();//Récupérer une instance de la base de données.
+        $params = [$idMo];
         $result = $db->execute_query($sql, $params);
         return $result->fetchAll(PDO::FETCH_OBJ);
     }   

@@ -34,8 +34,6 @@ class ControllerPersonel {
         $_SESSION['idPers']="";
         $_SESSION['errmsg']="Déconnexion réussie.";
         require("vue/login.php");
-
     }
-
 }
 ?>

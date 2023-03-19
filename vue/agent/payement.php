@@ -27,34 +27,25 @@
 		<div id="app">		
 			<?php include('include/sidebarAgent.php');?>
 			<div class="app-content">
-
-
-            
-
 			<?php include('include/header.php');?>  
-			<div class="container-fluid container-fullw bg-white">
-						
-			<div class="row">
-							<div class="main-content">
+				<div class="container-fluid container-fullw bg-white">			
+					<div class="row">
+						<div class="main-content">
 							<div class="panel panel-white">
-											<div class="panel-body">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-md-3"><h4><b>Nom et prénom du patient : </b> <?php echo $client->nomCl." ".$client->prenomCl ;?></h4></div>
+										<div class="col-md-6"><h4><b>ayant comme solde  : </b> <?php echo $client->solde ;?></h4></div>
+										<div class="col-md-6"><h4><b>Prix du consultation à payer  : </b> <?php echo $rdv->prixMo ;?></h4> date vers le :<?php echo $rdv->dateRDV ;?> </div>
+									</div></br>
+									<button onclick="window.location.href = 'index.php?controller=Client&action=payementProcess&NSS=<?php echo $rdv->nss;?>&idRDV=<?php echo $rdv->idRDV; ?>'"  name="registration" class="btn btn-primary ">Payer </button>
 
-												<div class="row">
-													<div class="col-md-3"><h4><b>Nom et prénom du patient : </b> <?php echo $client->nomCl." ".$client->prenomCl ;?></h4></div>
-													<div class="col-md-6"><h4><b>ayant comme solde  : </b> <?php echo $client->solde ;?></h4></div>
-
-													<div class="col-md-6"><h4><b>Prix du consultation à payer  : </b> <?php echo $rdv->prixMo ;?></h4> date vers le :<?php echo $rdv->dateRDV ;?> </div>
-												</div></br>
-												<button onclick="window.location.href = 'index.php?controller=Client&action=payementProcess&NSS=<?php echo $rdv->nss;?>&idRDV=<?php echo $rdv->idRDV; ?>'"  name="registration" class="btn btn-primary ">Payer </button>
-
-			          
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			</div>
-			</div>
-			</div>
-			</div>
-			</div>
-
 			<!-- start: FOOTER -->
 	<?php include('include/footer.php');?>
 			<!-- end: FOOTER -->
